@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit=" game(event)">
+        <input type="number" name="input" id="input" value="" placeholder="enter The Number">
+        <input type="submit" value="Sum">
+    </form>
+    <script>
+        localStorage.setItem('count', 1);
+        function game(e){
+            e.preventDefault();
+            
+            let number = parseInt(document.querySelector('#input').value);
+            console.log(number);
+            if(number > 41){
+                alert( 'too large  trial ' + localStorage.getItem('count').length + '/8');
+            }
+            else if(number < 39 ){
+                alert( 'too small trial ' + localStorage.getItem('count').length + '/8');
+            }
+            else if(number == 40 ){
+                alert( 'Correct WIth ' + localStorage.getItem('count').length + ' trial!');
+                document.querySelector('#input').readonly = true;
+            }
+            if(localStorage.length < 8){
+                localStorage.setItem("count", (localStorage.getItem('count') + 1));
+            }
+           if(localStorage.length == 8){
+            document.querySelector('#input').readonly = true;
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>

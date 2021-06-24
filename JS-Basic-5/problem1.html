@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<body>
+    <form action="" onsubmit=" greeting(event)">
+        <input type="text" name="input" id="input" value="" placeholder="enter Your Name">
+        <input type="submit" value="Greeting">
+    </form>
+</body>
+<script>
+    
+    function greeting(e){ 
+        let name = document.querySelector('#input').value; 
+        e.preventDefault(); 
+        if(name != ''){
+            alert(`Hello ${name}`);
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multipale</title>
+</head>
+<body>
+    <form action="" onsubmit=" sum(event)">
+        <input type="number" name="input" id="input" value="" placeholder="enter The Number">
+        <input type="submit" value="Sum">
+    </form>
+</body>
+<script>
+    
+    function sum(e){ 
+        let number = parseInt(document.querySelector('#input').value); 
+        e.preventDefault();         
+        let sum = 0;
+        for(let i = 3; i<=number ; i+=3){   
+            sum += i;
+        }
+        for(let i = 5; i<=number ; i+=5){   
+            sum += i;
+        }
+        // another solution
+        
+        // for(let i = 1; i<=number ; i++){
+        //     if(i % 3 == 0 || i % 5 == 0){
+        //         sum += i;
+        //     }
+        // }
+        alert(sum);
+    }
+
+</script>
+</html>
